@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3742795517896945303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742795517896945301}
+  - component: {fileID: 3742795517896945300}
+  m_Layer: 0
+  m_Name: generateObstacles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3742795517896945301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742795517896945303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 247, y: 162.7, z: 207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3742795517896945300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742795517896945303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab29bae5ca4996e45b95c3f7374c94fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs:
+  - {fileID: 9151011458761447526, guid: 52868c5fad37aaf498c2ab4e7cbfc543, type: 3}
+  - {fileID: 9151011458761447526, guid: 52868c5fad37aaf498c2ab4e7cbfc543, type: 3}
+  - {fileID: 1759200014585818490, guid: 9d13fd9a09ae2cd4aa7150cd4d2a818d, type: 3}
+  - {fileID: 4998844849129453264, guid: 74d6f1589edba3949988e3c371199863, type: 3}
+  - {fileID: 6648425373653000223, guid: c581a99fda783694f9a2b9d10137e1f0, type: 3}
+  - {fileID: 270525062734123150, guid: dd2c6c19ba62ba6498ee3d7b1dc28de9, type: 3}
+  - {fileID: 4172075972655783848, guid: 4f40636c554dfe04f8352d8eefe2bce8, type: 3}
+  - {fileID: 169341801386075255, guid: d52e2f7246b87d54f82a654d911cdb3d, type: 3}
+  - {fileID: 2404617085844399257, guid: 1a52b41fa5f6ba54792a0699140e3b5d, type: 3}
+  Range: 60
+  Density: 4
