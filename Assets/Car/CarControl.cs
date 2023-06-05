@@ -103,6 +103,7 @@ public class CarControl : MonoBehaviour
     */
 
     public int CurrentGear; // int value to set current gear
+    public bool gearChanged = false;
 
     private KeyCode[] keyInputs = { // all of the number inputs for gears for keyboard users
         KeyCode.Alpha1,
@@ -1565,27 +1566,40 @@ public class CarControl : MonoBehaviour
             {
                 if (ClutchInput > 0.5f)
                 {
-                    if (LogitechGSDK.LogiButtonIsPressed(0, 12) || LogitechGSDK.LogiButtonIsPressed(0, 14) || LogitechGSDK.LogiButtonIsPressed(0, 16))
+                    if (gearChanged == false)
                     {
-                        if (CurrentGear < 5)
+                        if (LogitechGSDK.LogiButtonTriggered(0, 12) || LogitechGSDK.LogiButtonTriggered(0, 14) || LogitechGSDK.LogiButtonTriggered(0, 16))
                         {
-                            setGear(CurrentGear + 1);
-                        }
-                        else
+                            if (CurrentGear < 5)
+                            {
+                                setGear(CurrentGear + 1);
+                            }
+                            else
+                            {
+                                setGear(5);
+                            }
+                            gearChanged = true;
+                        } 
+                        else if (LogitechGSDK.LogiButtonTriggered(0, 13) || LogitechGSDK.LogiButtonTriggered(0, 15) || LogitechGSDK.LogiButtonTriggered(0, 17))
                         {
-                            setGear(5);
+                            if (CurrentGear > -1)
+                            {
+                                setGear(CurrentGear - 1);
+                            }
+                            else
+                            {
+                                setGear(-1);
+                            }
+                            gearChanged = true;
                         }
-                    } 
-                    else if (LogitechGSDK.LogiButtonIsPressed(0, 13) || LogitechGSDK.LogiButtonIsPressed(0, 15) || LogitechGSDK.LogiButtonIsPressed(0, 17))
+                        else if (LogitechGSDK.LogiButtonReleased(0, 12) || LogitechGSDK.LogiButtonReleased(0, 14) || LogitechGSDK.LogiButtonReleased(0, 16) || LogitechGSDK.LogiButtonReleased(0, 12) || LogitechGSDK.LogiButtonReleased(0, 14) || LogitechGSDK.LogiButtonReleased(0, 16))
+                        {
+                            gearChanged = false;
+                        }
+                    }
+                    else
                     {
-                        if (CurrentGear > 0)
-                        {
-                            setGear(CurrentGear - 1);
-                        }
-                        else
-                        {
-                            setGear(0);
-                        }
+                        gearChanged = false;
                     }
                 }
             }
@@ -1606,13 +1620,13 @@ public class CarControl : MonoBehaviour
                     }
                     else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
                     {
-                        if (CurrentGear > 0)
+                        if (CurrentGear > -1)
                         {
                             setGear(CurrentGear - 1);
                         }
                         else
                         {
-                            setGear(0);
+                            setGear(-1);
                         }
                     }
                 }

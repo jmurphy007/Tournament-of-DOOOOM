@@ -28,7 +28,7 @@ public class showCustomizations : MonoBehaviour
         {
             leftText.text = "Left Handed? (L2)";
             colorText.text = "Random Colors? (L3)";
-            autoText.text = "Automatic Gears? (R3)";
+            autoText.text = "Automatic Gears? (R2)";
         } 
         else
         {

@@ -1969,7 +1969,7 @@ MonoBehaviour:
   Logo: {fileID: 1201479216}
   colors: {fileID: 151377171}
   left: {fileID: 1111784954}
-  carAuto: {fileID: 0}
+  carAuto: {fileID: 1625608704}
 --- !u!114 &318814649
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -212,15 +212,17 @@ public class MainMenu : MonoBehaviour
                             selectLevel(4);
                         }
                     }
-                }
-
-                if (controls.ControlsScreen.activeInHierarchy == false)
-                {
-                    instructions(true);
-                }
-                else
-                {
-                    instructions(false);
+                    else
+                    {
+                        if (controls.ControlsScreen.activeInHierarchy == false)
+                        {
+                            instructions(true);
+                        }
+                        else
+                        {
+                            instructions(false);
+                        }
+                    }
                 }
             }
 
@@ -370,15 +372,17 @@ public class MainMenu : MonoBehaviour
                             selectLevel(4);
                         }
                     }
-                }
-
-                if (controls.ControlsScreen.activeInHierarchy == false)
-                {
-                    instructions(true);
-                }
-                else
-                {
-                    instructions(false);
+                    else
+                    {
+                        if (controls.ControlsScreen.activeInHierarchy == false)
+                        {
+                            instructions(true);
+                        }
+                        else
+                        {
+                            instructions(false);
+                        }
+                    }
                 }
             }
 
